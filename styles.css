@@ -1,3 +1,4 @@
+/*GLOBAL========================================*/
 *{
     margin: 0;
     padding: 0;
@@ -6,16 +7,20 @@
 
 :root{
     --pink: #f70776;
-    --pink-low: #c3195d;
+    --pink-dark: #c3195d;
+    --pink-low:#c3195d2c;
     --purple:#680747; 
     --black:#141010; 
     --white: rgba(251, 241, 251, 0.726);
+    --white-contrast: #ffffff;
 }
 
 body {
     font-family: 'Josefin Sans', sans-serif;
     
 }
+
+/*TEXT========================================*/
 
 h1{
     font-weight: 700;
@@ -27,39 +32,139 @@ h2 {
     font-weight: 400;
     font-size: 3.5rem;
     color: var(--white);
+    text-align: center;
+
 }
 
 p{
     font-weight: 300;
     font-size: 2rem;
-    color: var(--white);
+    color: var(--white-contrast);
+    text-align: center;
 }
 
+/*MAIN========================================*/
+
 main{
+    padding: 2rem 0rem;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: var(--pink);
     display: flex;
     justify-content:center;
     align-items:center;
+    flex-direction: column;
+    gap: 5rem;
 }
 
+/*SECTIONS========================================*/
+
 .main_section{
-    width: 90%;
-    height: 85%;
+    width: 95%;
+    height: 36rem;
     display: flex;
     justify-content:center;
     align-items:center;
     flex-direction: column;
     background-color: var(--black);
     padding: 3rem;
+    border-radius: 0.2rem;
+    overflow: hidden;
+}
+
+.main_section.v3{
+    flex-direction: row;
+    gap: 4rem;
+    position: relative;
     
 }
+
+.main_section.v4{
+    flex-direction: column;
+    height: auto;
+}
+
+
+/*BTN========================================*/
 
 button {
     width: 100%;
     max-width: 30rem;
-    height: 20%;
+    height: 8rem;
     max-height:3rem ;
-    margin-top: 2rem;
+    margin-top: 5rem;
+    border-style: none;
+    border-radius: 0.2rem;
+    background-color: rgba(245, 245, 220, 0);
+    border:3px solid var(--pink-dark);
+    color: var(--pink-dark);
+    cursor: pointer;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: 90ms;
+}
+
+button:hover{
+    background-color: var(--pink-low);
+}
+.btn{
+  position: relative;
+  bottom: -12rem;
+  height: 5rem;
+  width: 7rem;
+}
+
+/*IMGS========================================*/
+
+.main_img{
+    width: auto;
+    height: 100%;
+}
+
+/*WRAPPER========================================*/
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+/*mural========================================*/
+.mural{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    cursor: pointer;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/*CARDS========================================*/
+.card{
+    width: 18rem;
+    height: 14rem;
+    background-color: var(--purple);
+    border-radius: 0.5rem;
+    
+}
+
+/*MEDIA-QUERIES========================================*/
+
+@media (max-width:1090px) {
+    .main_img{
+        position: absolute;
+        left: 0;
+        opacity: 0.2;
+    }
+
+    .main_section.v3{
+        
+        height: fit-content;
+    }
+    
+    .main_section{
+        height: auto;
+    }
 }
